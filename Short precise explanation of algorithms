@@ -1,0 +1,63 @@
+//Heap
+std::make_heap(begin(numbers), end(numbers)); - makes a heap out of random numbers
+numbers.push_back(8.88); adds the number as the last element
+std::push_heap(begin(numbers), end(numbers)); adds added element into heap(sorts the heap)
+std:pop_heap(begin(numbers), end(numbers)); swaps first and last, makes heap out of everything but not last
+numbers.pop_back(); deletes last element
+
+//sort -Sorts
+partial_sort- sorts until some place
+nth_element - sorts one element as if everything would have been sorted, left is smaller but not sorted, right is bigger but not sorted
+sort_heap - over and over again pop_heap
+inplace_merge - two sorted halves into one sorted thing
+partition - making two groups(blue, white), booleans
+partition_point - where the blue group ends
+rotate - takes last element into first place
+shuffle - arranges list in random order
+next_permutation - reverses sort if is sorted normally, can be used for generating all possible arrangements
+prev_permutation - reverses sort to normal if sorted like reversed
+reverse - reverses the element collection
+
+Coming up: runes(things you can use for other algorithms)
+
+stable_* (stable_sort, stable_partition) - maybe in the process some of the elements got swapped around, stable keeps them in the same order
+is_* (returns true or false) (is_sorted, is_partitioned, is_heap)
+is*_until returns an iterator, first postions where that predicate doesn't hold anymore (is_sorted_until, is_partitioned_until, is_heap_until)
+count - how many times a value occurs in the collection
+accumulate - makes the sum of the collection calling operator plus or any custom funciton you'd pass it
+reduce is practically the same as accumulate
+transform_reduce takes a fuction and applies it to the collection before occurring accordingly reduce
+partial_sum - returns a collection. first one element stays the same, second one is first plus second, third is the first plus second plus third
+inclusive_scan is the same thing as partial_sum except it can be run in power parallel
+exclusive_scan is the same thing as inclusive scan except it doesn't include the current element (second= first, third=first+second, fourth=first+second+third)
+transform versions of these scans take a function apply it to the collection and then perform the includeing stash
+inner_product - makes the inner product of the collection which is multiplication of the counterparts elements and then summing that whole thing
+adjacent_difference - makes the difference between every two neighbors in the collection
+sample - takes a number say n and it produces n element of that collection selected randomly
+all_of - takes a collection and returns if all the elements satisfy that predicate, if its empty it's going to be true
+any_of returns if at least one satisfies that predicate, if it's empty false
+none_of if none satisfies it, if it's empty true
+equal - checks whether they have the same contents
+is_permanent - checks whether they have the same elements but not necceseraly in the same order
+lexicographical_compare - checks which one is longer from the alphabet perspective
+mismatch - first postion when differ
+Searching a value:
+not sorted:
+find - find a value
+adjacent_find - where two adjacent value occur
+
+sorted:
+equal_range - equal elements
+lower_bound, upper_bound - start and end of the equal range
+binary_search - checks whether it exists, but doesn't give  where
+search - finds sub range in range
+find_end = finds where sub-range appears in range for the last time
+find_first_of -  find the first occurence of the sub_range
+max_elements, min_element (of range) minmax_elements returns a pair of iterators
+set_difference - returns the elements in the first one set but not the second one
+set_intersection - returns elements that are both in a andb
+set_union - returns element that are in set a or in set b
+set_symmetric_difference - returns the elements that are in a but not in b and that are in b but not in a
+std::includes checks whether all elements in b are in a 
+std::merge - takes two sorted collections and puts them together into one big sorted collection
+std::copy(first, last, out) - takes a collection and a output iterator of a second collection, copies every element of the first colleciton
